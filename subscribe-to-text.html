@@ -1,0 +1,29 @@
+<html>
+  <head> 
+    <style>
+      .container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+      .subscribe {
+        font-size: 24px;
+        font-weight: 600;
+        display: flex;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+    <p class="subscribe">Subscribe to Impact Youth text messages</p>
+    <canvas id="qr"></canvas>
+    <script type="module">
+      import qrcode from 'https://cdn.jsdelivr.net/npm/qrcode@1.5.4/+esm'
+
+      const payload = "SMSTO:+15102882020:Subscribe";
+      qrcode.toCanvas(document.getElementById("qr"), payload, { width: 500 });
+    </script>
+    </div>
+  </body>
+</html>
